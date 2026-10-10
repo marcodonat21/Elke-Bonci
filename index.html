@@ -240,13 +240,15 @@
   }
   .trust .wrap{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 14px 40px;
     color: var(--ink-soft);
     font-size: 0.86rem;
   }
-  .trust span{ white-space: nowrap; }
+  .trust span{ white-space: normal; }
   .trust strong{ color: var(--burgundy-deep); font-family:'Fraunces', serif; font-weight:600; font-size: 1.05rem; }
 
   /* ---------- Section shared ---------- */
@@ -648,7 +650,10 @@
     .team-wrap{ grid-template-columns: 1fr; }
     .reviews-grid{ grid-template-columns: 1fr; }
     .contact{ grid-template-columns: 1fr; margin: 0 16px; border-radius: 22px; padding: 32px 24px; }
-    .trust .wrap{ justify-content: flex-start; gap: 24px 32px; }
+    .trust .wrap{ justify-content: center; gap: 12px 28px; }
+  }
+  @media (max-width: 600px){
+    .trust .wrap{ flex-direction: column; gap: 12px; }
   }
   /* ---------- Cookie banner ---------- */
   #cookie-banner{
