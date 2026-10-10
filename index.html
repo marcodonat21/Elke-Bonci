@@ -395,6 +395,8 @@
     border-radius: 18px;
     padding: 26px 24px;
     border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
   }
   .review .stars{ color: var(--gold); letter-spacing: 2px; font-size: 0.9rem; }
   .review p{
@@ -403,7 +405,8 @@
     color: var(--ink-soft);
   }
   .review .name{
-    margin-top: 16px;
+    margin-top: auto;
+    padding-top: 16px;
     font-weight: 600;
     font-size: 0.88rem;
     color: var(--burgundy-deep);
@@ -488,7 +491,7 @@
 
   .locations-grid{
     display:grid;
-    grid-template-columns: minmax(0, 560px);
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     align-items: stretch;
   }
@@ -503,7 +506,7 @@
   }
   .map-preview{
     position: relative;
-    aspect-ratio: 16/9;
+    aspect-ratio: 21/9;
     width: 100%;
     overflow: hidden;
   }
@@ -542,6 +545,7 @@
     font-size: 0.88rem;
   }
   @media (max-width: 900px){
+    .map-preview{ aspect-ratio: 16/10; }
     .locations-grid{ grid-template-columns: 1fr; }
   }
 
