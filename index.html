@@ -335,6 +335,23 @@
     font-size: 0.94rem;
   }
 
+
+  /* ---------- Prima visita ---------- */
+  .visit-steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:28px; counter-reset:step; }
+  .visit-steps li{ position:relative; padding-top:22px; border-top:1px solid rgba(107,19,48,0.22); counter-increment:step; }
+  .visit-steps li::before{ content:counter(step); display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--burgundy); color:var(--cream); font-family:'Fraunces',serif; font-size:1rem; margin-bottom:16px; }
+  .visit-steps h3{ font-size:1.1rem; font-weight:450; margin:0; }
+  .visit-steps p{ margin-top:8px; color:var(--ink-soft); font-size:0.94rem; }
+
+  /* ---------- Urgenze ---------- */
+  .urgent{ background:var(--blush); padding:clamp(36px,6vw,56px) 0; }
+  .urgent .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px 40px; flex-wrap:wrap; }
+  .urgent h2{ font-size:clamp(1.4rem,2.6vw,1.8rem); margin:0; }
+  .urgent p{ margin:8px 0 0; color:var(--ink-soft); max-width:52ch; }
+  .urgent .contact-actions{ margin-top:0; display:flex; gap:12px; flex-wrap:wrap; }
+  .urgent .btn-whatsapp{ background:var(--cream); border-color:rgba(107,19,48,0.25); }
+  .urgent .btn-whatsapp:hover{ background:#fff; }
+
   /* ---------- Team ---------- */
   .team-wrap{
     display:grid;
@@ -651,12 +668,15 @@
     .hero-visual{ aspect-ratio: 16/10; order: -1; }
     .services-grid{ grid-template-columns: 1fr; }
     .approach-grid{ grid-template-columns: 1fr; }
+    .visit-steps{ grid-template-columns:1fr 1fr; }
     .team-wrap{ grid-template-columns: 1fr; }
     .reviews-grid{ grid-template-columns: 1fr; }
     .contact{ grid-template-columns: 1fr; margin: 0 16px; border-radius: 22px; padding: 32px 24px; }
     .trust .wrap{ justify-content: center; gap: 12px 28px; }
   }
   @media (max-width: 600px){
+    .visit-steps{ grid-template-columns:1fr; }
+    .urgent .wrap{ flex-direction:column; align-items:flex-start; }
     .trust .wrap{ flex-direction: column; gap: 12px; }
   }
   /* ---------- Cookie banner ---------- */
@@ -899,6 +919,34 @@
   </div>
 </section>
 
+<section id="prima-visita">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">La prima visita</span>
+      <h2>Come si svolge, passo dopo passo</h2>
+      <p>Un'ora dedicata a te, senza fretta: per capire insieme da dove partire.</p>
+    </div>
+    <ol class="visit-steps">
+      <li>
+        <h3>Ci metti in contatto</h3>
+        <p>Chiami lo studio o scrivi su WhatsApp, e troviamo insieme l'appuntamento più comodo.</p>
+      </li>
+      <li>
+        <h3>Ti ascolto</h3>
+        <p>Parliamo della tua storia clinica e di come stai vivendo il tuo sorriso, con calma.</p>
+      </li>
+      <li>
+        <h3>Guardiamo insieme</h3>
+        <p>Con telecamera e scanner intraorale ti mostro la situazione, così è tutto chiaro anche a te.</p>
+      </li>
+      <li>
+        <h3>Scegli con serenità</h3>
+        <p>Ti spiego le alternative possibili e la strada più adatta: la decisione resta sempre tua.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section id="team">
   <div class="wrap team-wrap">
     <div class="team-photo">
@@ -1024,6 +1072,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgent" id="urgenze">
+  <div class="wrap">
+    <div>
+      <h2>Hai un dolore o un'urgenza?</h2>
+      <p>Chiamaci o scrivici su WhatsApp: cercheremo insieme il modo di aiutarti il prima possibile.</p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn-primary" href="tel:+390815567564">Chiama ora</a>
+      <a class="btn-whatsapp" href="https://wa.me/393494949820" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
