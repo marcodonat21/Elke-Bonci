@@ -396,6 +396,17 @@
   .urgent .btn-whatsapp{ background:var(--cream); border-color:rgba(107,19,48,0.25); }
   .urgent .btn-whatsapp:hover{ background:#fff; }
 
+  /* ---------- Consigli ---------- */
+  #consigli .section-head{ max-width:none; }
+  #consigli .section-head h2{ white-space:nowrap; font-size:clamp(1.1rem, 5.2vw, 2.5rem); }
+  #consigli .section-head p{ max-width:56ch; }
+  .tips-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .tip{ background:var(--cream-2); border:1px solid var(--line); border-radius:18px; padding:26px 24px; }
+  .tip h3{ font-size:1.1rem; font-weight:450; margin:0; }
+  .tip p{ margin:10px 0 0; color:var(--ink-soft); font-size:0.94rem; }
+  @media (max-width:1000px){ .tips-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .tips-grid{ grid-template-columns:1fr; } }
+
   /* ---------- Team ---------- */
   .team-wrap{
     display:grid;
@@ -907,6 +918,7 @@
     <a href="#prima-visita">La prima visita</a>
     <a href="#team">Dott.ssa Elke</a>
     <a href="#recensioni">Recensioni</a>
+    <a href="#consigli">Consigli</a>
     <a href="#faq">Domande frequenti</a>
     <a href="#dove-siamo">Dove siamo</a>
     <a href="#urgenze">Urgenze</a>
@@ -1098,6 +1110,34 @@
         <p>Spiega tutto con lo scanner, foto alla mano. Per la prima volta ho capito davvero cosa stavo curando.</p>
         <div class="name">D. T.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="consigli">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">I compiti a casa</span>
+      <h2>Piccoli gesti, ogni giorno</h2>
+      <p>Qualche indicazione semplice, come quelle che do ai miei pazienti. Non sostituiscono la visita, ma aiutano a mantenere i risultati nel tempo.</p>
+    </div>
+    <div class="tips-grid">
+      <article class="tip">
+        <h3>Spazzola con delicatezza</h3>
+        <p>Due volte al giorno, per circa due minuti, con uno spazzolino a setole morbide e un dentifricio al fluoro. Premere forte non pulisce di più e può consumare lo smalto.</p>
+      </article>
+      <article class="tip">
+        <h3>Pulisci anche tra i denti</h3>
+        <p>Lo spazzolino non arriva negli spazi fra un dente e l'altro. Filo interdentale o scovolini, una volta al giorno, fanno una grande differenza per le gengive.</p>
+      </article>
+      <article class="tip">
+        <h3>Le gengive che sanguinano</h3>
+        <p>Non è normale, anche se non fa male. Se succede spesso, è meglio farsi controllare: le gengive in difficoltà si curano più facilmente se ce ne si accorge presto.</p>
+      </article>
+      <article class="tip">
+        <h3>Meno spuntini, più controlli</h3>
+        <p>Per i denti contano più le volte in cui si mangiano dolci durante la giornata che la quantità. E una visita di controllo periodica permette di intervenire prima, con meno.</p>
+      </article>
     </div>
   </div>
 </section>
