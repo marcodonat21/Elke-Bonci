@@ -427,6 +427,18 @@
     .studio-shot:not(.studio-wide){ aspect-ratio:4/5; }
   }
 
+  @media (min-width:901px) and (hover:hover){
+    .studio-grid{ display:flex; }
+    .studio-shot{ flex:1 1 0; min-width:0; transition:flex-grow .55s cubic-bezier(.2,.8,.2,1); }
+    .studio-wide{ flex-grow:1.5; }
+    .studio-shot:hover{ flex-grow:2.8; }
+    .studio-shot img{ transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+    .studio-shot:hover img{ transform:scale(1.04); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .studio-shot, .studio-shot img{ transition:none !important; }
+  }
+
   /* ---------- Bambini ---------- */
   .kids{ background:var(--cream-2); }
   .kids-wrap{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:clamp(32px, 6vw, 72px); align-items:center; }
