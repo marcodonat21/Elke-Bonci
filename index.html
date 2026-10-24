@@ -8,6 +8,10 @@
 <meta property="og:title" content="Elke Bonci — Odontoiatra al Vomero, Napoli">
 <meta property="og:description" content="Approccio minimamente invasivo, parodontologia ed estetica del sorriso, al Vomero, Napoli.">
 <meta property="og:type" content="website">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#F7F1EE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -271,25 +275,6 @@
   }
   .card-float .stars{ color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; }
   .card-float small{ display:block; color: var(--ink-soft); font-size: 0.78rem; margin-top: 3px; }
-
-  /* ---------- Trust strip ---------- */
-  .trust{
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 26px 0;
-  }
-  .trust .wrap{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    gap: 14px 40px;
-    color: var(--ink-soft);
-    font-size: 0.86rem;
-  }
-  .trust span{ white-space: normal; }
-  .trust strong{ color: var(--burgundy-deep); font-family:'Fraunces', serif; font-weight:600; font-size: 1.05rem; }
 
   /* ---------- Section shared ---------- */
   section{ padding: clamp(64px, 9vw, 104px) 0; }
@@ -778,12 +763,10 @@
     .team-wrap{ grid-template-columns: 1fr; }
     .reviews-grid{ grid-template-columns: 1fr; }
     .contact{ grid-template-columns: 1fr; margin: 0 16px; border-radius: 22px; padding: 32px 24px; }
-    .trust .wrap{ justify-content: center; gap: 12px 28px; }
   }
   @media (max-width: 600px){
     .visit-steps{ grid-template-columns:1fr; }
     .urgent .wrap{ flex-direction:column; align-items:flex-start; }
-    .trust .wrap{ flex-direction: column; gap: 12px; }
   }
   /* ---------- Cookie banner ---------- */
   #cookie-banner{
@@ -1003,15 +986,6 @@
     </div>
   </div>
 </section>
-
-<div class="trust">
-  <div class="wrap">
-    <span><strong>Parodontologia</strong> come specializzazione</span>
-    <span><strong>Scanner intraorale</strong> per mostrare ogni diagnosi</span>
-    <span><strong>Approccio delicato</strong>, sempre nel rispetto del tuo dente</span>
-    <span><strong>Prima visita</strong> di circa un'ora</span>
-  </div>
-</div>
 
 <section id="servizi">
   <div class="wrap">
@@ -1259,23 +1233,23 @@
       <p>Qualche risposta prima ancora della prima visita, per arrivare già più tranquillo/a.</p>
     </div>
     <div class="faq-list">
-      <details class="faq-item" open>
+      <details class="faq-item" name="faq" open>
         <summary>Come posso avere denti più bianchi?<span class="plus">+</span></summary>
         <p>Valutiamo insieme la soluzione più adatta a te, dallo sbiancamento professionale graduale a eventuali ricostruzioni estetiche, sempre partendo da una diagnosi chiara e senza forzature sui tempi.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>Ho paura di perdere i miei denti: si può evitare?<span class="plus">+</span></summary>
         <p>Spesso sì. La parodontologia è una delle mie prime specializzazioni: lavoro per intercettare i problemi alle gengive e ai tessuti di supporto prima che diventino irreversibili.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>Mi hanno detto che devo estrarre un dente: c'è un'alternativa?<span class="plus">+</span></summary>
         <p>Prima di arrivare all'estrazione provo sempre le vie conservative possibili, come una devitalizzazione o una ricostruzione. L'estrazione resta una soluzione definitiva, da considerare solo quando non ci sono altre strade percorribili.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>Vorrei migliorare il mio sorriso: da dove si inizia?<span class="plus">+</span></summary>
         <p>Dalla prima visita, che dura circa un'ora: ascolto le tue esigenze, osservo la situazione con lo scanner intraorale e ti mostro le opzioni più adatte, senza proporti nulla che non ti serva davvero.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="faq">
         <summary>Mi fa malissimo un dente, cosa posso fare?<span class="plus">+</span></summary>
         <p>Scrivimi o chiamami: le urgenze vengono gestite con priorità, per darti sollievo il prima possibile e poi valutare con calma il percorso di cura più adatto.</p>
       </details>
@@ -1369,23 +1343,23 @@
     <div style="max-width: 760px;">
     <h2 style="font-size:1.3rem; margin-bottom:8px;">Privacy e cookie</h2>
     <div class="faq-list" style="border-top:none;">
-      <details class="faq-item">
+      <details class="faq-item" name="privacy">
         <summary>Titolare del trattamento<span class="plus">+</span></summary>
         <p>Elke Bonci — Studio Odontoiatrico, Via Solimena 139, Vomero (NA). Email: elke.bonci@gmail.com. P.IVA 09653201211.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="privacy">
         <summary>Dati raccolti e finalità<span class="plus">+</span></summary>
         <p>I dati inseriti nei moduli di contatto, prenotazione o nel sistema di appuntamenti (nome, contatti, eventuali note sulla richiesta) sono trattati esclusivamente per rispondere e gestire l'appuntamento, nel rispetto del Regolamento (UE) 2016/679 (GDPR). Non vengono ceduti a terzi per finalità commerciali o di marketing senza consenso esplicito.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="privacy">
         <summary>Conservazione dei dati<span class="plus">+</span></summary>
         <p>I dati sono conservati per il tempo necessario a gestire la richiesta e, per i soli dati clinici raccolti durante le visite, secondo gli obblighi di legge previsti per la documentazione sanitaria.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="privacy">
         <summary>I tuoi diritti<span class="plus">+</span></summary>
         <p>Puoi richiedere in qualsiasi momento accesso, rettifica, cancellazione o limitazione dei tuoi dati, scrivendo a elke.bonci@gmail.com.</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" name="privacy">
         <summary>Cookie<span class="plus">+</span></summary>
         <p>Questo sito non utilizza cookie di profilazione propri né strumenti di analisi o pubblicitari (es. Google Analytics, pixel pubblicitari). Nella sezione "Dove siamo" sono incorporate mappe di Google Maps: caricandole, Google può ricevere dati di navigazione e impostare propri cookie, trattati secondo la sua informativa (policies.google.com/privacy). Viene salvata solo una preferenza tecnica nel tuo browser per ricordare la scelta fatta sul banner cookie, utile esclusivamente a te e non condivisa con nessuno. Se in futuro verranno aggiunti strumenti di analisi o marketing, questa informativa e il banner verranno aggiornati di conseguenza.</p>
       </details>
@@ -1456,6 +1430,18 @@
     menu.addEventListener('click',function(e){ if(e.target.closest('a')) setOpen(false); });
     document.addEventListener('click',function(e){ if(!menu.hidden && !menu.contains(e.target)) setOpen(false); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
+  })();
+  (function(){
+    // Una sola risposta aperta alla volta (anche nei browser senza supporto per details[name])
+    document.querySelectorAll('.faq-list').forEach(function(list){
+      var items=list.querySelectorAll('details.faq-item');
+      items.forEach(function(d){
+        d.addEventListener('toggle',function(){
+          if(!d.open) return;
+          items.forEach(function(o){ if(o!==d && o.open) o.open=false; });
+        });
+      });
+    });
   })();
 </script>
 </body>
