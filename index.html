@@ -169,13 +169,13 @@
   .hero{
     position: relative;
     overflow: hidden;
-    padding: clamp(56px, 9vw, 108px) 0 clamp(64px, 10vw, 120px);
+    padding: clamp(56px, 9vw, 108px) 0 clamp(48px, 6vw, 72px);
   }
   .hero::before{
     content:"";
     position:absolute;
-    top: -20%;
-    right: -12%;
+    top: -80px;
+    right: -6%;
     width: 620px;
     height: 620px;
     border-radius: 50%;
@@ -318,7 +318,9 @@
     padding: 34px 28px;
     transition: background .25s ease;
   }
-  .service:hover{ background: #EDE0DB; }
+  .service:hover{ background: #FBF6F4; }
+  #servizi{ background: #EAD5D9; }
+  #servizi .services-grid{ background: rgba(107,19,48,0.14); border-color: rgba(107,19,48,0.14); box-shadow: 0 20px 44px -30px rgba(74,13,34,0.45); }
   .service .num{
     font-family:'Fraunces', serif;
     font-style: italic;
@@ -753,7 +755,7 @@
     position:absolute;
     width: 220px;
     height:auto;
-    top: calc(-20% + 310px);
+    top: 230px;
     right: calc(310px - 6%);
     transform: translate(50%, -50%);
     opacity: 0.92;
