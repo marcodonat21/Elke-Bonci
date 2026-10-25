@@ -842,6 +842,10 @@
   .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
   @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
+  .ba-intere .ba-pair{ aspect-ratio: auto !important; }
+  .ba-intere .ba-pair .ba-img{ aspect-ratio: 1100 / 688 !important; height:auto; }
+  @media (max-width: 760px){ .ba-intere .ba-pair{ grid-template-columns: 1fr !important; } }
+
   .ba-sub{ display:block; margin-top:4px; font-family:'Public Sans',sans-serif; font-size:0.86rem; color: rgba(247,241,238,0.7); line-height:1.5; }
 
   /* Caso a tre foto: si allarga la foto sotto il cursore (o toccata), come nello studio */
@@ -1644,13 +1648,10 @@
           </div>
           <figcaption>Ricostruzione dei monconi con perno in fibra di vetro<small class="ba-sub">Erano rimaste solo le radici, senza più niente attaccato: ho ricostruito i monconi con un perno in fibra di vetro.</small></figcaption>
         </figure>
-        <figure class="ba">
-          <div class="ba-frame" style="--ar:1100/688">
-            <img src="casi/frontale-dopo.jpg" alt="Denti ricostruiti, vista frontale: dopo" loading="lazy" width="1100" height="688">
-            <img class="ba-before" src="casi/frontale-prima.jpg" alt="Denti ricostruiti, vista frontale: prima" loading="lazy" width="1100" height="688">
-            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
-            <span class="ba-handle" aria-hidden="true"></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Denti ricostruiti, vista frontale">
+        <figure class="ba ba-intere">
+          <div class="ba-pair" style="--ar:1100/688; --n:2">
+            <div class="ba-img"><img src="casi/frontale-prima.jpg" alt="Denti ricostruiti, vista frontale: prima" loading="lazy" width="1100" height="688"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/frontale-dopo.jpg" alt="Denti ricostruiti, vista frontale: dopo" loading="lazy" width="1100" height="688"><span class="ba-tag ba-tag-after">Dopo</span></div>
           </div>
           <figcaption>Denti ricostruiti, vista frontale</figcaption>
         </figure>
