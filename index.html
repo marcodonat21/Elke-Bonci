@@ -824,6 +824,19 @@
     .ba-narrow .ba-pair{ grid-template-columns: 1fr 1fr; }
   }
 
+  .ba-more{ margin-top: 40px; text-align:center; }
+  .ba-more-btn{ background: var(--cream); color: var(--burgundy-deep); border:0; border-radius:999px; padding:15px 30px; font:600 0.98rem 'Public Sans',sans-serif; cursor:pointer; transition: background .2s ease, transform .2s ease; }
+  .ba-more-btn:hover{ background:#fff; transform: translateY(-2px); }
+  .casi-overlay{ position:fixed; inset:0; z-index:320; background: rgba(20,6,10,0.72); backdrop-filter: blur(4px); overflow-y:auto; padding: env(safe-area-inset-top, 0px) 14px 14px; overscroll-behavior: contain; }
+  .casi-overlay:not([hidden]){ display:block; }
+  .casi-panel{ position:relative; max-width: 1000px; margin: 22px auto 40px; background: var(--burgundy-deep); color: var(--cream); border-radius: 24px; padding: 44px clamp(18px, 4vw, 48px) 40px; box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6); animation: panel-drop 0.28s cubic-bezier(.2,.8,.2,1) both; }
+  .casi-panel h2{ color: var(--cream); font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin: 6px 0 10px; }
+  .casi-panel .kicker{ color: var(--fuchsia-soft); }
+  .casi-intro{ color: rgba(247,241,238,0.78); margin: 0 0 30px; max-width: 60ch; }
+  .casi-close{ position: sticky; top: 14px; float:right; margin: -26px -14px 0 0; width:42px; height:42px; border-radius:50%; border:1px solid rgba(247,241,238,0.35); background: var(--burgundy-deep); color: var(--cream); font-size:1.5rem; line-height:1; cursor:pointer; z-index:2; }
+  .casi-close:hover{ background: var(--burgundy); }
+  body.no-scroll{ overflow:hidden; }
+
   /* ---------- Motion (one orchestrated entrance) ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-grid > *{
@@ -1300,57 +1313,16 @@
         <figcaption>Faccette in composito</figcaption>
       </figure>
       <figure class="ba">
-        <div class="ba-pair" style="--ar:1100/710; --n:2">
-          <div class="ba-img"><img src="casi/fratture-prima.jpg" alt="Incisivi fratturati, ricostruiti in composito: prima" loading="lazy" width="1100" height="710"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/fratture-dopo.jpg" alt="Incisivi fratturati, ricostruiti in composito: dopo" loading="lazy" width="1100" height="710"><span class="ba-tag ba-tag-after">Dopo</span></div>
-        </div>
-        <figcaption>Incisivi fratturati, ricostruiti in composito</figcaption>
-      </figure>
-      <figure class="ba">
-        <div class="ba-pair" style="--ar:1100/759; --n:3">
-          <div class="ba-img"><img src="casi/triangoli-prima.jpg" alt="Prima, subito dopo e dopo 6 mesi: prima" loading="lazy" width="1100" height="759"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/triangoli-subito-dopo.jpg" alt="Prima, subito dopo e dopo 6 mesi: subito dopo" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Subito dopo</span></div>
-          <div class="ba-img"><img src="casi/triangoli-dopo-6-mesi.jpg" alt="Prima, subito dopo e dopo 6 mesi: dopo 6 mesi" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Dopo 6 mesi</span></div>
-        </div>
-        <figcaption>Prima, subito dopo e dopo 6 mesi</figcaption>
-      </figure>
-      <figure class="ba">
         <div class="ba-pair" style="--ar:1100/733; --n:2">
           <div class="ba-img"><img src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733"><span class="ba-tag">Prima</span></div>
           <div class="ba-img"><img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733"><span class="ba-tag ba-tag-after">Dopo</span></div>
         </div>
         <figcaption>Chiusura del diastema</figcaption>
       </figure>
-      <figure class="ba">
-        <div class="ba-pair" style="--ar:1100/688; --n:2">
-          <div class="ba-img"><img src="casi/carie-incisivo-prima.jpg" alt="Carie su un incisivo: prima" loading="lazy" width="1100" height="688"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/carie-incisivo-dopo.jpg" alt="Carie su un incisivo: dopo" loading="lazy" width="1100" height="688"><span class="ba-tag ba-tag-after">Dopo</span></div>
-        </div>
-        <figcaption>Carie su un incisivo</figcaption>
-      </figure>
-      <figure class="ba">
-        <div class="ba-pair" style="--ar:1014/579; --n:2">
-          <div class="ba-img"><img src="casi/macchia-prima.jpg" alt="Macchia su un incisivo: prima" loading="lazy" width="1014" height="579"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/macchia-dopo.jpg" alt="Macchia su un incisivo: dopo" loading="lazy" width="1014" height="579"><span class="ba-tag ba-tag-after">Dopo</span></div>
-        </div>
-        <figcaption>Macchia su un incisivo</figcaption>
-      </figure>
-      <figure class="ba">
-        <div class="ba-pair" style="--ar:430/268; --n:2">
-          <div class="ba-img"><img src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268"><span class="ba-tag ba-tag-after">Dopo</span></div>
-        </div>
-        <figcaption>Il sorriso, prima e dopo</figcaption>
-      </figure>
-      <figure class="ba ba-narrow">
-        <div class="ba-pair" style="--ar:825/1100; --n:2">
-          <div class="ba-img"><img src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100"><span class="ba-tag ba-tag-after">Dopo</span></div>
-        </div>
-        <figcaption>Ricostruzione di un molare, con la diga di gomma</figcaption>
-      </figure>
     </div>
-    <p class="ba-note">Foto di pazienti dello studio, pubblicate con il loro consenso. Sono stati corretti solo luce e colore, allo stesso modo su tutte le foto di ogni caso.</p>
+    <div class="ba-more">
+      <button type="button" class="ba-more-btn" id="casi-open">Vedi tutti i casi (8)</button>
+    </div>
   </div>
 </section>
 
@@ -1540,6 +1512,75 @@
   </div>
 </section>
 
+<div id="casi-overlay" class="casi-overlay" role="dialog" aria-modal="true" aria-labelledby="casi-title" hidden>
+  <div class="casi-panel">
+    <button type="button" class="casi-close" id="casi-close" aria-label="Chiudi">×</button>
+    <span class="kicker">Prima e dopo</span>
+    <h2 id="casi-title">Tutti i casi</h2>
+    <p class="casi-intro">Ricostruzioni in composito, senza limare i denti: si aggiunge materiale solo dove serve.</p>
+    <div class="ba-list">
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/710; --n:2">
+            <div class="ba-img"><img src="casi/faccette-prima.jpg" alt="Faccette in composito: prima" loading="lazy" width="1100" height="710"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/faccette-dopo.jpg" alt="Faccette in composito: dopo" loading="lazy" width="1100" height="710"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Faccette in composito</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/710; --n:2">
+            <div class="ba-img"><img src="casi/fratture-prima.jpg" alt="Incisivi fratturati, ricostruiti in composito: prima" loading="lazy" width="1100" height="710"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/fratture-dopo.jpg" alt="Incisivi fratturati, ricostruiti in composito: dopo" loading="lazy" width="1100" height="710"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Incisivi fratturati, ricostruiti in composito</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/759; --n:3">
+            <div class="ba-img"><img src="casi/triangoli-prima.jpg" alt="Prima, subito dopo e dopo 6 mesi: prima" loading="lazy" width="1100" height="759"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/triangoli-subito-dopo.jpg" alt="Prima, subito dopo e dopo 6 mesi: subito dopo" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Subito dopo</span></div>
+            <div class="ba-img"><img src="casi/triangoli-dopo-6-mesi.jpg" alt="Prima, subito dopo e dopo 6 mesi: dopo 6 mesi" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Dopo 6 mesi</span></div>
+          </div>
+          <figcaption>Prima, subito dopo e dopo 6 mesi</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/733; --n:2">
+            <div class="ba-img"><img src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Chiusura del diastema</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/688; --n:2">
+            <div class="ba-img"><img src="casi/carie-incisivo-prima.jpg" alt="Carie su un incisivo: prima" loading="lazy" width="1100" height="688"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/carie-incisivo-dopo.jpg" alt="Carie su un incisivo: dopo" loading="lazy" width="1100" height="688"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Carie su un incisivo</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1014/579; --n:2">
+            <div class="ba-img"><img src="casi/macchia-prima.jpg" alt="Macchia su un incisivo: prima" loading="lazy" width="1014" height="579"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/macchia-dopo.jpg" alt="Macchia su un incisivo: dopo" loading="lazy" width="1014" height="579"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Macchia su un incisivo</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:430/268; --n:2">
+            <div class="ba-img"><img src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Il sorriso, prima e dopo</figcaption>
+        </figure>
+        <figure class="ba ba-narrow">
+          <div class="ba-pair" style="--ar:825/1100; --n:2">
+            <div class="ba-img"><img src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Ricostruzione di un molare, con la diga di gomma</figcaption>
+        </figure>
+    </div>
+    <p class="ba-note">Foto di pazienti dello studio, pubblicate con il loro consenso. Sono stati corretti solo luce e colore, allo stesso modo su tutte le foto di ogni caso.</p>
+  </div>
+</div>
+
 <div id="privacy-overlay" class="privacy-overlay">
   <div class="privacy-panel">
     <button id="privacy-close" class="privacy-close" aria-label="Chiudi">×</button>
@@ -1645,6 +1686,19 @@
         });
       });
     });
+  })();
+  (function(){
+    var ov=document.getElementById('casi-overlay'), op=document.getElementById('casi-open'), cl=document.getElementById('casi-close');
+    if(!ov||!op) return;
+    var last=null;
+    function open(push){ last=document.activeElement; ov.hidden=false; document.body.classList.add('no-scroll'); ov.scrollTop=0; cl.focus(); if(push){ try{ history.pushState({casi:1},'','#tutti-i-casi'); }catch(e){} } }
+    function close(fromPop){ if(ov.hidden) return; ov.hidden=true; document.body.classList.remove('no-scroll'); if(last) last.focus(); if(!fromPop && location.hash==='#tutti-i-casi'){ try{ history.back(); }catch(e){} } }
+    op.addEventListener('click',function(){ open(true); });
+    cl.addEventListener('click',function(){ close(false); });
+    ov.addEventListener('click',function(e){ if(e.target===ov) close(false); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(false); });
+    window.addEventListener('popstate',function(){ if(location.hash==='#tutti-i-casi') open(false); else close(true); });
+    if(location.hash==='#tutti-i-casi') open(false);
   })();
 </script>
 </body>
