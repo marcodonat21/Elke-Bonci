@@ -778,6 +778,32 @@
   .urgent .btn-whatsapp{ background: transparent; color: var(--cream); border-color: rgba(247,241,238,0.45); }
   .urgent .btn-whatsapp:hover{ background: rgba(247,241,238,0.12); }
 
+  /* ---------- Trattamenti: link e card prenota ---------- */
+  .services-grid{ grid-template-columns: repeat(4, 1fr); }
+  .service{ display:flex; flex-direction:column; }
+  .service p{ flex:1; }
+  .service-more{ margin-top:16px; font-size:0.86rem; font-weight:500; color:var(--fuchsia); text-decoration:none; }
+  .service-more::after{ content:" →"; }
+  a.service-more:hover{ color:var(--burgundy-deep); }
+  .service-cta{ background: var(--burgundy) !important; text-decoration:none; }
+  .service-cta h3{ color: var(--cream); }
+  .service-cta p{ color: rgba(247,241,238,0.8); }
+  .service-cta .service-more{ color: var(--cream); }
+  .service-cta:hover{ background: var(--fuchsia) !important; }
+  @media (max-width: 1100px){ .services-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px){ .services-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Approfondimenti ---------- */
+  .deep{ background: var(--cream); }
+  .deep-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); }
+  .deep-item{ border-top: 1px solid var(--line); padding-top: 26px; scroll-margin-top: 100px; }
+  .deep-num{ font-family:'Fraunces', serif; font-style:italic; color: var(--fuchsia); font-size: 1rem; }
+  .deep-item h3{ font-size: clamp(1.35rem, 2.2vw, 1.7rem); margin: 8px 0 14px; }
+  .deep-item p{ color: var(--ink-soft); font-size: 0.98rem; margin: 0 0 14px; max-width: 58ch; }
+  .deep-item strong{ color: var(--burgundy-deep); font-weight: 600; }
+  mark.todo{ background:#FFE58A; color:#5a3a00; padding:0 4px; border-radius:4px; }
+  @media (max-width: 900px){ .deep-grid{ grid-template-columns: 1fr; } }
+
   /* ---------- Motion (one orchestrated entrance) ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-grid > *{
@@ -1007,6 +1033,7 @@
   </div>
   <nav class="site-menu" id="site-menu" aria-label="Menu principale" hidden>
     <a href="#servizi">Trattamenti</a>
+    <a href="#approfondimenti">Approfondimenti</a>
     <a href="#metodo">Il metodo</a>
     <a href="#prima-visita">La prima visita</a>
     <a href="#team">Dott.ssa Elke</a>
@@ -1045,7 +1072,13 @@
     <div class="services-grid">
       <div class="service">
         <h3>Parodontologia</h3>
-        <p>Cura delle gengive e prevenzione, una delle mie prime specializzazioni, per un sorriso sano e stabile nel tempo.</p>
+        <p>Cura delle gengive e dei tessuti che sostengono il dente, una delle mie prime specializzazioni, per un sorriso sano e stabile nel tempo.</p>
+        <a class="service-more" href="#approfondimenti">Approfondisci</a>
+      </div>
+      <div class="service">
+        <h3>Implantologia</h3>
+        <p>Quando un dente manca già, si possono rimettere denti fissi con gli impianti, scegliendo sempre la tecnica meno invasiva.</p>
+        <a class="service-more" href="#implantologia">Approfondisci</a>
       </div>
       <div class="service">
         <h3>Odontoiatria conservativa</h3>
@@ -1067,6 +1100,36 @@
         <h3>Igiene e prevenzione</h3>
         <p>Controlli periodici e compiti di cura quotidiana, perché la salute orale si costruisce ogni giorno, non solo in studio.</p>
       </div>
+      <a class="service service-cta" href="#contatti">
+        <h3>La prima visita</h3>
+        <p>Un'ora dedicata a te, per capire insieme da dove partire.</p>
+        <span class="service-more">Prenota</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="approfondimenti" class="deep">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Approfondimenti</span>
+      <h2>Capire per scegliere</h2>
+      <p>Due argomenti che spiego spesso in studio, perché sapere come funzionano le cose aiuta a prendersene cura.</p>
+    </div>
+    <div class="deep-grid">
+      <article class="deep-item">
+        <span class="deep-num">01</span>
+        <h3>Parodontologia: le fondamenta del sorriso</h3>
+        <p>Il <strong>parodonto</strong> è tutto ciò che circonda e sostiene il dente: la gengiva, l'osso e i legamenti che lo tengono saldo al suo posto.</p>
+        <p>Mi piace paragonarlo alle <strong>fondamenta di una casa</strong>. Una casa può essere perfetta, ma se le fondamenta cedono non sta più in piedi. Con i denti succede lo stesso: nella malattia parodontale, molto spesso, si perdono <strong>denti sani</strong>, non perché siano rovinati, ma perché viene a mancare il loro supporto.</p>
+        <p>Per questo intercettare il problema presto fa la differenza: significa salvare denti che altrimenti andrebbero persi.</p>
+      </article>
+      <article class="deep-item" id="implantologia">
+        <span class="deep-num">02</span>
+        <h3>Implantologia: quando un dente manca già</h3>
+        <p>Il mio obiettivo resta sempre salvare i denti. Ma se arrivi in studio quando qualche dente manca già, anche se oggi porti una protesi mobile come uno scheletrato, si possono <strong>rimettere denti fissi</strong> grazie agli impianti.</p>
+        <p>Anche in questo caso cerco soluzioni <strong>meno invasive</strong> rispetto ai metodi tradizionali. Un esempio è il <strong>rialzo del seno mascellare</strong>, che serve quando nell'arcata superiore manca osso: utilizzo una tecnica chiamata <mark class="todo">[nome della tecnica]</mark>, che permette di ottenere anche grandi rialzi senza interventi invasivi.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1108,7 +1171,7 @@
     </div>
     <ol class="visit-steps">
       <li>
-        <h3>Ci metti in contatto</h3>
+        <h3>Ti metti in contatto</h3>
         <p>Chiami lo studio o scrivi su WhatsApp, e troviamo insieme l'appuntamento più comodo.</p>
       </li>
       <li>
@@ -1235,7 +1298,7 @@
     <div class="tips-grid">
       <article class="tip">
         <h3>Spazzola con delicatezza</h3>
-        <p>Due volte al giorno, per circa due minuti, con uno spazzolino a setole morbide e un dentifricio al fluoro. Premere forte non pulisce di più e può consumare lo smalto.</p>
+        <p>Almeno due volte al giorno, per circa due minuti, con un dentifricio al fluoro e uno spazzolino a setole medie o morbide: quale sia il più adatto a te lo decidiamo insieme durante la visita. Premere forte non pulisce di più e può consumare lo smalto.</p>
       </article>
       <article class="tip">
         <h3>Pulisci anche tra i denti</h3>
@@ -1243,11 +1306,11 @@
       </article>
       <article class="tip">
         <h3>Le gengive che sanguinano</h3>
-        <p>Non è normale, anche se non fa male. Se succede spesso, è meglio farsi controllare: le gengive in difficoltà si curano più facilmente se ce ne si accorge presto.</p>
+        <p>Non è normale, anche se non fa male. Se succede spesso, è meglio farsi controllare: le gengive si curano più facilmente se il problema si intercetta precocemente.</p>
       </article>
       <article class="tip">
         <h3>Meno spuntini, più controlli</h3>
-        <p>Per i denti contano più le volte in cui si mangiano dolci durante la giornata che la quantità. E una visita di controllo periodica permette di intervenire prima, con meno.</p>
+        <p>Per i denti contano più le volte in cui si mangiano dolci durante la giornata che la quantità. Per chi tende a fare carie è meglio ravvicinare le visite di controllo, così da intercettarle agli esordi e perdere meno tessuto sano.</p>
       </article>
     </div>
   </div>
