@@ -826,6 +826,15 @@
 
   .ba-split .ba-img{ border-radius: 18px; }
   .ba-tag-r{ left:auto; right:10px; }
+  .ba-frame{ position:relative; aspect-ratio: var(--ar); border-radius: 18px; overflow:hidden; background:#1c0a10; --pos:50%; user-select:none; }
+  .ba-frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; -webkit-user-drag:none; pointer-events:none; }
+  .ba-frame .ba-before{ clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .ba-frame .ba-tag{ z-index:2; transition: opacity .2s ease; }
+  .ba-handle{ position:absolute; top:0; bottom:0; left:var(--pos); width:4px; margin-left:-2px; background: var(--cream); pointer-events:none; z-index:2; box-shadow: 0 0 10px rgba(0,0,0,0.35); }
+  .ba-handle::after{ content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:46px; height:46px; border-radius:50%; background: var(--cream) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A0D22' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat; box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
+  .ba-range{ position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; z-index:3; touch-action: pan-y; -webkit-appearance:none; appearance:none; }
+  .ba-range::-webkit-slider-thumb{ -webkit-appearance:none; width:60px; height:100%; }
+  .ba-frame:focus-within .ba-handle::after{ outline: 3px solid var(--fuchsia-soft); outline-offset: 2px; }
   .ba-more{ margin-top: 40px; text-align:center; }
   .ba-more-btn{ background: var(--cream); color: var(--burgundy-deep); border:0; border-radius:999px; padding:15px 30px; font:600 0.98rem 'Public Sans',sans-serif; cursor:pointer; transition: background .2s ease, transform .2s ease; }
   .ba-more-btn:hover{ background:#fff; transform: translateY(-2px); }
@@ -1315,9 +1324,12 @@
         <figcaption>Faccette in composito</figcaption>
       </figure>
       <figure class="ba">
-        <div class="ba-pair" style="--ar:1100/733; --n:2">
-          <div class="ba-img"><img src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733"><span class="ba-tag">Prima</span></div>
-          <div class="ba-img"><img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733"><span class="ba-tag ba-tag-after">Dopo</span></div>
+        <div class="ba-frame" style="--ar:1100/733">
+          <img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733">
+          <img class="ba-before" src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733">
+          <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+          <span class="ba-handle" aria-hidden="true"></span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Chiusura del diastema">
         </div>
         <figcaption>Chiusura del diastema</figcaption>
       </figure>
@@ -1529,9 +1541,12 @@
           <figcaption>Faccette in composito</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:1100/710; --n:2">
-            <div class="ba-img"><img src="casi/fratture-prima.jpg" alt="Incisivi fratturati, ricostruiti in composito: prima" loading="lazy" width="1100" height="710"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/fratture-dopo.jpg" alt="Incisivi fratturati, ricostruiti in composito: dopo" loading="lazy" width="1100" height="710"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:1100/710">
+            <img src="casi/fratture-dopo.jpg" alt="Incisivi fratturati, ricostruiti in composito: dopo" loading="lazy" width="1100" height="710">
+            <img class="ba-before" src="casi/fratture-prima.jpg" alt="Incisivi fratturati, ricostruiti in composito: prima" loading="lazy" width="1100" height="710">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Incisivi fratturati, ricostruiti in composito">
           </div>
           <figcaption>Incisivi fratturati, ricostruiti in composito</figcaption>
         </figure>
@@ -1544,37 +1559,52 @@
           <figcaption>Prima, subito dopo e dopo 6 mesi</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:1100/733; --n:2">
-            <div class="ba-img"><img src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:1100/733">
+            <img src="casi/diastema-dopo.jpg" alt="Chiusura del diastema: dopo" loading="lazy" width="1100" height="733">
+            <img class="ba-before" src="casi/diastema-prima.jpg" alt="Chiusura del diastema: prima" loading="lazy" width="1100" height="733">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Chiusura del diastema">
           </div>
           <figcaption>Chiusura del diastema</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:1100/688; --n:2">
-            <div class="ba-img"><img src="casi/carie-incisivo-prima.jpg" alt="Carie su un incisivo: prima" loading="lazy" width="1100" height="688"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/carie-incisivo-dopo.jpg" alt="Carie su un incisivo: dopo" loading="lazy" width="1100" height="688"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:1100/688">
+            <img src="casi/carie-incisivo-dopo.jpg" alt="Carie su un incisivo: dopo" loading="lazy" width="1100" height="688">
+            <img class="ba-before" src="casi/carie-incisivo-prima.jpg" alt="Carie su un incisivo: prima" loading="lazy" width="1100" height="688">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Carie su un incisivo">
           </div>
           <figcaption>Carie su un incisivo</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:1014/579; --n:2">
-            <div class="ba-img"><img src="casi/macchia-prima.jpg" alt="Macchia su un incisivo: prima" loading="lazy" width="1014" height="579"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/macchia-dopo.jpg" alt="Macchia su un incisivo: dopo" loading="lazy" width="1014" height="579"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:1014/579">
+            <img src="casi/macchia-dopo.jpg" alt="Macchia su un incisivo: dopo" loading="lazy" width="1014" height="579">
+            <img class="ba-before" src="casi/macchia-prima.jpg" alt="Macchia su un incisivo: prima" loading="lazy" width="1014" height="579">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Macchia su un incisivo">
           </div>
           <figcaption>Macchia su un incisivo</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:430/268; --n:2">
-            <div class="ba-img"><img src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:430/268">
+            <img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268">
+            <img class="ba-before" src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Il sorriso, prima e dopo">
           </div>
           <figcaption>Il sorriso, prima e dopo</figcaption>
         </figure>
         <figure class="ba ba-narrow">
-          <div class="ba-pair" style="--ar:825/1100; --n:2">
-            <div class="ba-img"><img src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100"><span class="ba-tag">Prima</span></div>
-            <div class="ba-img"><img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          <div class="ba-frame" style="--ar:825/1100">
+            <img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100">
+            <img class="ba-before" src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100">
+            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
+            <span class="ba-handle" aria-hidden="true"></span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Ricostruzione di un molare, con la diga di gomma">
           </div>
           <figcaption>Ricostruzione di un molare, con la diga di gomma</figcaption>
         </figure>
@@ -1701,6 +1731,13 @@
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(false); });
     window.addEventListener('popstate',function(){ if(location.hash==='#tutti-i-casi') open(false); else close(true); });
     if(location.hash==='#tutti-i-casi') open(false);
+  })();
+  (function(){
+    document.querySelectorAll('.ba-frame').forEach(function(f){
+      var r=f.querySelector('.ba-range'), tl=f.querySelector('.ba-tag:not(.ba-tag-r)'), tr=f.querySelector('.ba-tag-r');
+      function upd(){ var v=+r.value; f.style.setProperty('--pos', v+'%'); if(tl) tl.style.opacity = v<12?0:1; if(tr) tr.style.opacity = v>88?0:1; }
+      r.addEventListener('input',upd); upd();
+    });
   })();
 </script>
 </body>
