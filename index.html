@@ -842,12 +842,16 @@
   .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
   @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
-  /* Caso a tre foto: si allarga la foto sotto il cursore, come nello studio */
-  @media (hover:hover) and (min-width: 761px){
-    .ba-pair[data-grow]{ display:flex !important; }
-    .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; transition: flex-grow .55s cubic-bezier(.2,.8,.2,1); }
+  /* Caso a tre foto: si allarga la foto sotto il cursore (o toccata), come nello studio */
+  .ba-pair[data-grow]{ display:flex !important; }
+  .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; cursor:pointer; transition: flex-grow .55s cubic-bezier(.2,.8,.2,1); }
+  .ba-pair[data-grow] .ba-img img{ transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .ba-pair[data-grow] .ba-img.is-open{ flex-grow: 2.8; }
+  .ba-pair[data-grow] .ba-img.is-open img{ transform: scale(1.04); }
+  @media (hover:hover){
+    .ba-pair[data-grow]:hover .ba-img.is-open:not(:hover){ flex-grow:1; }
+    .ba-pair[data-grow]:hover .ba-img.is-open:not(:hover) img{ transform:none; }
     .ba-pair[data-grow] .ba-img:hover{ flex-grow: 2.8; }
-    .ba-pair[data-grow] .ba-img img{ transition: transform .7s cubic-bezier(.2,.8,.2,1); }
     .ba-pair[data-grow] .ba-img:hover img{ transform: scale(1.04); }
   }
   @media (prefers-reduced-motion: reduce){ .ba-pair[data-grow] .ba-img, .ba-pair[data-grow] .ba-img img{ transition:none !important; } }
@@ -1757,6 +1761,15 @@
       var r=f.querySelector('.ba-range'), tl=f.querySelector('.ba-tag:not(.ba-tag-r)'), tr=f.querySelector('.ba-tag-r');
       function upd(){ var v=+r.value; f.style.setProperty('--pos', v+'%'); if(tl) tl.style.opacity = v<12?0:1; if(tr) tr.style.opacity = v>88?0:1; }
       r.addEventListener('input',upd); upd();
+    });
+  })();
+  (function(){
+    document.querySelectorAll('.ba-pair[data-grow] .ba-img').forEach(function(el){
+      el.addEventListener('click',function(){
+        var was=el.classList.contains('is-open');
+        el.parentNode.querySelectorAll('.ba-img').forEach(function(x){ x.classList.remove('is-open'); });
+        if(!was) el.classList.add('is-open');
+      });
     });
   })();
 </script>
