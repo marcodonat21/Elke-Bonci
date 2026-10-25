@@ -844,15 +844,18 @@
   .ba-more{ margin-top: 40px; text-align:center; }
   /* Caso a tre foto: si allarga la foto sotto il cursore (o toccata), come nello studio */
   .ba-pair[data-grow]{ display:flex !important; }
-  .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; cursor:pointer; transition: flex-grow .55s cubic-bezier(.2,.8,.2,1); }
+  .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; cursor:pointer; transition: flex .55s cubic-bezier(.2,.8,.2,1); }
   .ba-pair[data-grow] .ba-img img{ transition: transform .7s cubic-bezier(.2,.8,.2,1); }
-  .ba-pair[data-grow] .ba-img.is-open{ flex-grow: 2.8; }
-  .ba-pair[data-grow] .ba-img.is-open img{ transform: scale(1.04); }
+  .ba-pair[data-grow] .ba-img.is-open{ flex: 0 0 88%; }
+  .ba-pair[data-grow] .ba-img .ba-tag{ white-space:nowrap; }
+  .ba-pair[data-grow] .ba-img:not(.is-open) .ba-tag{ opacity:0; }
+  .ba-pair[data-grow]:not(:has(.is-open)) .ba-img .ba-tag{ opacity:1; }
   @media (hover:hover){
-    .ba-pair[data-grow]:hover .ba-img.is-open:not(:hover){ flex-grow:1; }
-    .ba-pair[data-grow]:hover .ba-img.is-open:not(:hover) img{ transform:none; }
-    .ba-pair[data-grow] .ba-img:hover{ flex-grow: 2.8; }
-    .ba-pair[data-grow] .ba-img:hover img{ transform: scale(1.04); }
+    .ba-pair[data-grow]:hover .ba-img.is-open:not(:hover){ flex:1 1 0; }
+    .ba-pair[data-grow]:hover .ba-img:not(:hover) .ba-tag{ opacity:0; }
+    .ba-pair[data-grow] .ba-img:hover .ba-tag{ opacity:1; }
+    .ba-pair[data-grow] .ba-img:hover{ flex: 0 0 88%; }
+    
   }
   @media (prefers-reduced-motion: reduce){ .ba-pair[data-grow] .ba-img, .ba-pair[data-grow] .ba-img img{ transition:none !important; } }
 
