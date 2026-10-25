@@ -842,6 +842,16 @@
   .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
   @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
+  /* ---------- Prima e dopo: tutte le foto della stessa grandezza ---------- */
+  .ba, .ba-narrow, .ba-molare, .ba-sorriso, .ba-split{ max-width: 760px !important; width:100%; margin-left:auto !important; margin-right:auto !important; }
+  .ba-list{ justify-items: center; }
+  .ba-list > .ba{ justify-self: stretch; }
+  .ba-pair, .ba-frame, .ba-split .ba-img{ aspect-ratio: 16 / 10 !important; }
+  .ba-pair{ grid-template-columns: repeat(var(--n), 1fr) !important; gap: 6px !important; }
+  .ba-pair .ba-img{ aspect-ratio: auto !important; height: 100%; }
+  .ba-pair .ba-img img{ object-position: 50% 45%; }
+  .ba figcaption{ text-align: left; }
+
   .ba-more-btn{ background: var(--cream); color: var(--burgundy-deep); border:0; border-radius:999px; padding:15px 30px; font:600 0.98rem 'Public Sans',sans-serif; cursor:pointer; transition: background .2s ease, transform .2s ease; }
   .ba-more-btn:hover{ background:#fff; transform: translateY(-2px); }
   .casi-overlay{ position:fixed; inset:0; z-index:320; background: rgba(20,6,10,0.72); backdrop-filter: blur(4px); overflow-y:auto; padding: env(safe-area-inset-top, 0px) 14px 14px; overscroll-behavior: contain; }
@@ -1323,8 +1333,8 @@
     </div>
     <div class="ba-list">
       <figure class="ba ba-split">
-        <div class="ba-img" style="--ar:1400/477">
-          <img src="casi/faccette-split.jpg" alt="Faccette in composito: a sinistra prima, a destra dopo" loading="lazy" width="1400" height="477">
+        <div class="ba-img" style="--ar:1400/875">
+          <img src="casi/faccette-split.jpg" alt="Faccette in composito: a sinistra prima, a destra dopo" loading="lazy" width="1400" height="875">
           <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
         </div>
         <figcaption>Faccette in composito</figcaption>
@@ -1540,8 +1550,8 @@
     <p class="casi-intro">Ricostruzioni in composito, senza limare i denti: si aggiunge materiale solo dove serve.</p>
     <div class="ba-list">
         <figure class="ba ba-split">
-          <div class="ba-img" style="--ar:1400/477">
-            <img src="casi/faccette-split.jpg" alt="Faccette in composito: a sinistra prima, a destra dopo" loading="lazy" width="1400" height="477">
+          <div class="ba-img" style="--ar:1400/875">
+            <img src="casi/faccette-split.jpg" alt="Faccette in composito: a sinistra prima, a destra dopo" loading="lazy" width="1400" height="875">
             <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
           </div>
           <figcaption>Faccette in composito</figcaption>
