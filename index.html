@@ -835,6 +835,9 @@
   .ba-range{ position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize; z-index:3; touch-action: pan-y; -webkit-appearance:none; appearance:none; }
   .ba-range::-webkit-slider-thumb{ -webkit-appearance:none; width:60px; height:100%; }
   .ba-frame:focus-within .ba-handle::after{ outline: 3px solid var(--fuchsia-soft); outline-offset: 2px; }
+  .ba-molare{ max-width: 460px; }
+  .ba-molare .ba-pair{ grid-template-columns: 1fr 1fr !important; }
+  @media (max-width: 760px){ .ba-molare{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
   .ba-more-btn{ background: var(--cream); color: var(--burgundy-deep); border:0; border-radius:999px; padding:15px 30px; font:600 0.98rem 'Public Sans',sans-serif; cursor:pointer; transition: background .2s ease, transform .2s ease; }
   .ba-more-btn:hover{ background:#fff; transform: translateY(-2px); }
@@ -1598,13 +1601,10 @@
           </div>
           <figcaption>Il sorriso, prima e dopo</figcaption>
         </figure>
-        <figure class="ba ba-narrow">
-          <div class="ba-frame" style="--ar:825/1100">
-            <img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100">
-            <img class="ba-before" src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100">
-            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
-            <span class="ba-handle" aria-hidden="true"></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Ricostruzione di un molare, con la diga di gomma">
+        <figure class="ba ba-molare">
+          <div class="ba-pair" style="--ar:825/1100; --n:2">
+            <div class="ba-img"><img src="casi/molare-prima.jpg" alt="Ricostruzione di un molare, con la diga di gomma: prima" loading="lazy" width="825" height="1100"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100"><span class="ba-tag ba-tag-after">Dopo</span></div>
           </div>
           <figcaption>Ricostruzione di un molare, con la diga di gomma</figcaption>
         </figure>
