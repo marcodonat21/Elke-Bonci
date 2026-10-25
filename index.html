@@ -838,6 +838,9 @@
   .ba-molare{ max-width: 460px; }
   .ba-molare .ba-pair{ grid-template-columns: 1fr 1fr !important; }
   @media (max-width: 760px){ .ba-molare{ max-width:none; } }
+  .ba-sorriso{ max-width: 720px; }
+  .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
+  @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
   .ba-more-btn{ background: var(--cream); color: var(--burgundy-deep); border:0; border-radius:999px; padding:15px 30px; font:600 0.98rem 'Public Sans',sans-serif; cursor:pointer; transition: background .2s ease, transform .2s ease; }
   .ba-more-btn:hover{ background:#fff; transform: translateY(-2px); }
@@ -1591,13 +1594,10 @@
           </div>
           <figcaption>Macchia su un incisivo</figcaption>
         </figure>
-        <figure class="ba">
-          <div class="ba-frame" style="--ar:430/268">
-            <img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268">
-            <img class="ba-before" src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268">
-            <span class="ba-tag">Prima</span><span class="ba-tag ba-tag-after ba-tag-r">Dopo</span>
-            <span class="ba-handle" aria-hidden="true"></span>
-            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Scorri per confrontare prima e dopo: Il sorriso, prima e dopo">
+        <figure class="ba ba-sorriso">
+          <div class="ba-pair" style="--ar:430/268; --n:2">
+            <div class="ba-img"><img src="casi/sorriso-prima.jpg" alt="Il sorriso, prima e dopo: prima" loading="lazy" width="430" height="268"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/sorriso-dopo.jpg" alt="Il sorriso, prima e dopo: dopo" loading="lazy" width="430" height="268"><span class="ba-tag ba-tag-after">Dopo</span></div>
           </div>
           <figcaption>Il sorriso, prima e dopo</figcaption>
         </figure>
