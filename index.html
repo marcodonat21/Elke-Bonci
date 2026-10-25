@@ -842,6 +842,8 @@
   .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
   @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
+  .ba-sub{ display:block; margin-top:4px; font-family:'Public Sans',sans-serif; font-size:0.86rem; color: rgba(247,241,238,0.7); line-height:1.5; }
+
   /* Caso a tre foto: si allarga la foto sotto il cursore (o toccata), come nello studio */
   .ba-pair[data-grow]{ display:flex !important; }
   .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; cursor:pointer; transition: flex .55s cubic-bezier(.2,.8,.2,1); }
@@ -1368,7 +1370,7 @@
       </figure>
     </div>
     <div class="ba-more">
-      <button type="button" class="ba-more-btn" id="casi-open">Vedi tutti i casi (8)</button>
+      <button type="button" class="ba-more-btn" id="casi-open">Vedi tutti i casi (9)</button>
     </div>
   </div>
 </section>
@@ -1634,6 +1636,13 @@
             <div class="ba-img"><img src="casi/molare-dopo.jpg" alt="Ricostruzione di un molare, con la diga di gomma: dopo" loading="lazy" width="825" height="1100"><span class="ba-tag ba-tag-after">Dopo</span></div>
           </div>
           <figcaption>Ricostruzione di un molare, con la diga di gomma</figcaption>
+        </figure>
+        <figure class="ba">
+          <div class="ba-pair" style="--ar:1100/688; --n:2">
+            <div class="ba-img"><img src="casi/monconi-prima.jpg" alt="Ricostruzione dei monconi con perno in fibra di vetro: prima" loading="lazy" width="1100" height="688"><span class="ba-tag">Prima</span></div>
+            <div class="ba-img"><img src="casi/monconi-dopo.jpg" alt="Ricostruzione dei monconi con perno in fibra di vetro: dopo" loading="lazy" width="1100" height="688"><span class="ba-tag ba-tag-after">Dopo</span></div>
+          </div>
+          <figcaption>Ricostruzione dei monconi con perno in fibra di vetro<small class="ba-sub">Erano rimaste solo le radici, senza più niente attaccato: ho ricostruito i monconi con un perno in fibra di vetro.</small></figcaption>
         </figure>
     </div>
     <p class="ba-note">Foto di pazienti dello studio, pubblicate con il loro consenso. Sono stati corretti solo luce e colore, allo stesso modo su tutte le foto di ogni caso.</p>
