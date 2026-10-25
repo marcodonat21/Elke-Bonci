@@ -842,6 +842,16 @@
   .ba-sorriso .ba-pair{ grid-template-columns: 1fr 1fr !important; gap:6px; }
   @media (max-width: 760px){ .ba-sorriso{ max-width:none; } }
   .ba-more{ margin-top: 40px; text-align:center; }
+  /* Caso a tre foto: si allarga la foto sotto il cursore, come nello studio */
+  @media (hover:hover) and (min-width: 761px){
+    .ba-pair[data-grow]{ display:flex !important; }
+    .ba-pair[data-grow] .ba-img{ flex:1 1 0; min-width:0; transition: flex-grow .55s cubic-bezier(.2,.8,.2,1); }
+    .ba-pair[data-grow] .ba-img:hover{ flex-grow: 2.8; }
+    .ba-pair[data-grow] .ba-img img{ transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+    .ba-pair[data-grow] .ba-img:hover img{ transform: scale(1.04); }
+  }
+  @media (prefers-reduced-motion: reduce){ .ba-pair[data-grow] .ba-img, .ba-pair[data-grow] .ba-img img{ transition:none !important; } }
+
   /* ---------- Prima e dopo: tutte le foto della stessa grandezza ---------- */
   .ba, .ba-narrow, .ba-molare, .ba-sorriso, .ba-split{ max-width: 760px !important; width:100%; margin-left:auto !important; margin-right:auto !important; }
   .ba-list{ justify-items: center; }
@@ -1567,7 +1577,7 @@
           <figcaption>Incisivi fratturati, ricostruiti in composito</figcaption>
         </figure>
         <figure class="ba">
-          <div class="ba-pair" style="--ar:1100/759; --n:3">
+          <div class="ba-pair" style="--ar:1100/759; --n:3" data-grow="1">
             <div class="ba-img"><img src="casi/triangoli-prima.jpg" alt="Prima, subito dopo e dopo 6 mesi: prima" loading="lazy" width="1100" height="759"><span class="ba-tag">Prima</span></div>
             <div class="ba-img"><img src="casi/triangoli-subito-dopo.jpg" alt="Prima, subito dopo e dopo 6 mesi: subito dopo" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Subito dopo</span></div>
             <div class="ba-img"><img src="casi/triangoli-dopo-6-mesi.jpg" alt="Prima, subito dopo e dopo 6 mesi: dopo 6 mesi" loading="lazy" width="1100" height="759"><span class="ba-tag ba-tag-after">Dopo 6 mesi</span></div>
