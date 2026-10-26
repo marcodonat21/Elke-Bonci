@@ -917,6 +917,11 @@
   .insta-text span{ font-size:.94rem; color: rgba(247,241,238,.82); max-width:56ch; }
   .insta-btn{ flex-shrink:0; background: var(--cream); color: var(--burgundy-deep); padding: 12px 22px; border-radius:999px; font-weight:600; font-size:.95rem; }
   @media (max-width: 700px){ .insta-card{ flex-direction:column; align-items:flex-start; gap:16px; padding:24px; } .insta-btn{ align-self:stretch; text-align:center; } }
+  .insta-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .insta-grid .insta-card{ flex-direction:column; align-items:flex-start; gap:16px; padding:28px; }
+  .insta-grid .insta-text{ flex:1; }
+  .fb-card{ background: linear-gradient(120deg, var(--fuchsia) -20%, var(--burgundy) 45%, var(--burgundy-deep) 100%); }
+  @media (max-width: 760px){ .insta-grid{ grid-template-columns: 1fr; } .insta-grid .insta-btn{ align-self:stretch; text-align:center; } }
   /* ---------- Motion (one orchestrated entrance) ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-grid > *{
@@ -1519,7 +1524,7 @@
 </section>
 
 <section class="insta" id="instagram">
-  <div class="wrap">
+  <div class="wrap insta-grid">
     <a class="insta-card" href="https://www.instagram.com/elke.bonci/" target="_blank" rel="noopener" aria-label="Segui Elke Bonci su Instagram">
       <span class="insta-icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></span>
       <span class="insta-text">
@@ -1527,6 +1532,14 @@
         <span>Consigli per il sorriso, casi seguiti in studio e un po' di vita quotidiana tra una visita e l'altra.</span>
       </span>
       <span class="insta-btn">@elke.bonci</span>
+    </a>
+    <a class="insta-card fb-card" href="https://www.facebook.com/profile.php?id=61595711732774" target="_blank" rel="noopener" aria-label="Segui Elke Bonci su Facebook">
+      <span class="insta-icon" aria-hidden="true"><svg width="30" height="30" viewBox="5.2 4.5 15 15" fill="none"><path d="M14 9h2.5V6H14c-1.9 0-3.4 1.5-3.4 3.4V11H9v3h1.6v6h3v-6h2.3l.5-3h-2.8V9.6c0-.4.3-.6.6-.6z" fill="currentColor"/></svg></span>
+      <span class="insta-text">
+        <strong>Seguimi su Facebook</strong>
+        <span>Novità dallo studio, aggiornamenti sugli orari e piccoli consigli per prendersi cura del sorriso.</span>
+      </span>
+      <span class="insta-btn">Elke Bonci</span>
     </a>
   </div>
 </section>
