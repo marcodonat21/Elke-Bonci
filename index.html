@@ -899,6 +899,11 @@
   .casi-close:hover{ background: var(--burgundy); }
   body.no-scroll{ overflow:hidden; }
 
+  /* Recensioni in aggiornamento */
+  .reviews-wrap{ position:relative; }
+  .reviews-wrap .reviews-grid{ opacity:.35; filter: blur(2px) grayscale(.3); pointer-events:none; user-select:none; }
+  .reviews-badge{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .reviews-badge span{ background: var(--burgundy); color: var(--cream); padding: 14px 28px; border-radius:999px; font-family:'Fraunces',serif; font-size:1.15rem; box-shadow:0 14px 30px -14px rgba(74,13,34,.6); }
   /* ---------- Motion (one orchestrated entrance) ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-grid > *{
@@ -1397,7 +1402,8 @@
       <span class="kicker">Recensioni</span>
       <h2>Cosa dicono i pazienti</h2>
     </div>
-    <div class="reviews-grid">
+    <div class="reviews-wrap">
+    <div class="reviews-grid" aria-hidden="true">
       <div class="review">
         <span class="stars">★★★★★</span>
         <p>In un altro studio mi avevano proposto una soluzione drastica. Con Elke ho trovato un percorso più delicato, e il mio dente è ancora al suo posto.</p>
@@ -1413,6 +1419,8 @@
         <p>Spiega tutto con lo scanner, foto alla mano. Per la prima volta ho capito davvero cosa stavo curando.</p>
         <div class="name">D. T.</div>
       </div>
+    </div>
+    <div class="reviews-badge"><span>Sezione in aggiornamento</span></div>
     </div>
   </div>
 </section>
