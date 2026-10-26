@@ -138,7 +138,6 @@
 
 
   /* ---------- Menu a scomparsa ---------- */
-  header{ position: sticky; }
   .menu-toggle{
     display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px;
     width:42px; height:42px; padding:0; cursor:pointer;
@@ -922,6 +921,10 @@
   .insta-grid .insta-text{ flex:1; }
   .fb-card{ background: linear-gradient(120deg, var(--fuchsia) -20%, var(--burgundy) 45%, var(--burgundy-deep) 100%); }
   @media (max-width: 760px){ .insta-grid{ grid-template-columns: 1fr; } .insta-grid .insta-btn{ align-self:stretch; text-align:center; } }
+  /* Barra fissa in alto: su iOS 26 Safari colora l'area dell'orologio con lo sfondo dell'elemento fisso in cima */
+  header{ position: fixed !important; top:0; left:0; right:0; background: var(--burgundy) !important; backdrop-filter:none; }
+  body{ padding-top: var(--hdr, calc(79px + env(safe-area-inset-top, 0px))); }
+  html{ scroll-padding-top: calc(var(--hdr, 80px) + 12px) !important; }
   /* ---------- Motion (one orchestrated entrance) ---------- */
   @media (prefers-reduced-motion: no-preference){
     .hero-grid > *{
@@ -1871,6 +1874,12 @@
         if(!was) el.classList.add('is-open');
       });
     });
+  })();
+  (function(){
+    var h=document.querySelector('header'); if(!h) return;
+    function set(){ document.documentElement.style.setProperty('--hdr', h.offsetHeight+'px'); }
+    set(); window.addEventListener('resize',set);
+    if(window.ResizeObserver) new ResizeObserver(set).observe(h);
   })();
 </script>
 </body>
