@@ -801,6 +801,7 @@
   .service-cta p{ color: rgba(247,241,238,0.8); }
   .service-cta .service-more{ color: var(--cream); }
   .service-cta:hover{ background: var(--fuchsia) !important; }
+  @media (min-width: 601px){ .service-cta{ grid-column: 1 / -1; } }
   @media (max-width: 1100px){ .services-grid{ grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px){ .services-grid{ grid-template-columns: 1fr; } }
 
@@ -814,6 +815,15 @@
   .deep-item strong{ color: var(--burgundy-deep); font-weight: 600; }
   mark.todo{ background:#FFE58A; color:#5a3a00; padding:0 4px; border-radius:4px; }
   @media (max-width: 900px){ .deep-grid{ grid-template-columns: 1fr; } }
+  .deep-item.deep-wide{ grid-column: 1 / -1; }
+  .deep-wide .deep-cols{ display:grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(28px, 4vw, 56px); }
+  .deep-wide .deep-cols p{ max-width: none; }
+  @media (max-width: 900px){ .deep-wide .deep-cols{ grid-template-columns: 1fr; } }
+  .provider-badge{ display:inline-flex; align-items:center; gap:12px; margin-top:10px; padding:12px 22px; border:1.5px solid var(--burgundy); border-radius:999px; color:var(--burgundy-deep); background:#fff; }
+  .provider-badge svg{ flex:none; }
+  .provider-badge span{ font-size:1.02rem; font-weight:600; letter-spacing:.01em; }
+  .provider-badge sup{ font-size:.6em; }
+  .deep-item h3 sup, .deep-item p sup, .service p sup{ font-size:.5em; line-height:0; }
 
   /* ---------- Prima e dopo ---------- */
   .cases{ background: var(--burgundy-deep); color: var(--cream); }
@@ -1272,6 +1282,11 @@
         <p>Trattamenti graduali e sicuri, calibrati sulla sensibilità di ogni paziente.</p>
       </div>
       <div class="service">
+        <h3>Allineatori trasparenti</h3>
+        <p>Raddrizzare i denti senza apparecchio fisso, con mascherine trasparenti Invisalign<sup>®</sup> quasi invisibili e removibili.</p>
+        <a class="service-more" href="#invisalign">Approfondisci</a>
+      </div>
+      <div class="service">
         <h3>Diagnosi digitale</h3>
         <p>Scanner intraorale e immagini a supporto di ogni spiegazione, per decidere insieme con consapevolezza.</p>
       </div>
@@ -1293,7 +1308,7 @@
     <div class="section-head">
       <span class="kicker">Approfondimenti</span>
       <h2>Capire per scegliere</h2>
-      <p>Due argomenti che spiego spesso in studio, perché sapere come funzionano le cose aiuta a prendersene cura.</p>
+      <p>Alcuni argomenti che spiego spesso in studio, perché sapere come funzionano le cose aiuta a prendersene cura.</p>
     </div>
     <div class="deep-grid">
       <article class="deep-item">
@@ -1308,6 +1323,24 @@
         <h3>Implantologia: quando un dente manca già</h3>
         <p>Il mio obiettivo resta sempre salvare i denti. Ma se arrivi in studio quando qualche dente manca già, anche se oggi porti una protesi mobile come uno scheletrato, si possono <strong>rimettere denti fissi</strong> grazie agli impianti.</p>
         <p>Anche in questo caso cerco soluzioni <strong>meno invasive</strong> rispetto ai metodi tradizionali. Un esempio è il <strong>rialzo del seno mascellare</strong>, che serve quando nell'arcata superiore manca osso: utilizzo una tecnica chiamata <strong>Flusilift</strong>, che permette di ottenere anche grandi rialzi senza interventi invasivi.</p>
+      </article>
+      <article class="deep-item deep-wide" id="invisalign">
+        <span class="deep-num">03</span>
+        <h3>Allineatori trasparenti: Invisalign<sup>®</sup></h3>
+        <div class="deep-cols">
+          <div>
+            <p>Per allineare i denti non serve per forza l'apparecchio fisso. In studio utilizziamo gli <strong>allineatori trasparenti Invisalign<sup>®</sup></strong>: mascherine sottili, realizzate su misura, che spostano i denti un poco alla volta.</p>
+            <p>Sono <strong>quasi invisibili</strong> e si possono <strong>togliere</strong> per mangiare e per lavare i denti, così l'igiene quotidiana resta semplice e non ci sono cibi da evitare.</p>
+          </div>
+          <div>
+            <p>Il percorso parte da una <strong>scansione digitale</strong> con lo scanner intraorale, senza impronte in pasta: insieme guardiamo come si muoveranno i denti e come potrebbe essere il sorriso a fine trattamento.</p>
+            <p>Durante la cura ci vediamo per controlli periodici, per verificare che tutto proceda come previsto. Se vuoi capire se sono adatti a te, ne parliamo alla prima visita.</p>
+          </div>
+        </div>
+        <div class="provider-badge" aria-label="Provider Invisalign">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.8 7 22l5-3 5 3-1.5-8.2"/><path d="m9.5 9 1.7 1.7L14.6 7.3"/></svg>
+          <span>Provider Invisalign<sup>®</sup></span>
+        </div>
       </article>
     </div>
   </div>
